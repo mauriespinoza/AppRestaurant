@@ -2,6 +2,7 @@
   "name": "apprestaurant",
   "private": true,
   "version": "0.0.0",
+  "author": "Mauricio Espinoza",
   "type": "module",
   "scripts": {
     "dev": "vite",
