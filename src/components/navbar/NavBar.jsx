@@ -1,12 +1,14 @@
 import { NavLink } from 'react-router-dom';
-
+import logo from '../../../public/logo-master-raul.jpg';
+import './navbar.css'
 export const NavBar = ()=>{
    return (
     <>
      <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
-            Restaurant
+            {/* Restaurant */}
+            <img id="logo" src={logo} alt="" />
           </NavLink>
           <button
             className="navbar-toggler"

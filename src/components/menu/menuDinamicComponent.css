@@ -1,0 +1,24 @@
+.card-group{
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+ .card-img-top{
+     height: 50px;
+     width: 50px;
+     /* display: flex; 
+     margin:auto;*/
+     position: center;
+ }
+ .card-img{
+    height: 80px;
+    width: 80px;
+     display: flex; 
+    margin:auto;
+    position: center;
+}
+.card-title{
+    text-align: center;
+}
+.btn btn-primary{
+    
+}
