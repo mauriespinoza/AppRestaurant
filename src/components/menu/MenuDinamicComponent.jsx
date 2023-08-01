@@ -43,13 +43,13 @@ import './menuDinamicComponent.css';
             </div>     
         ))}  */}
         <div className="card-group">
-        { familiasprod.map( familia => (
+        { familiasprod.map( (familia, index) => (
                
-               <div className="card">
+               <div className="card" key={index}>
                    <img className="card-img" src={familia.img}  alt="Card image cap"/>
                    <div className="card-body">
                    <h5 className="card-title">{familia.nombreFamilia}</h5>
-                   <div class="text-center">
+                   <div className="text-center">
                         <a href="#" className="btn btn-primary">Go somewhere</a>
                    </div>
                    </div>
