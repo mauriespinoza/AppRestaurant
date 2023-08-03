@@ -4,7 +4,7 @@ import './navbar.css'
 export const NavBar = ()=>{
    return (
     <>
-     <nav className="navbar navbar-expand-lg bg-body-tertiary">
+     <nav id="navbar" className="navbar navbar-expand-lg bg-body-">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
             {/* Restaurant */}
@@ -30,7 +30,7 @@ export const NavBar = ()=>{
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/menu">
-                  Menu
+                  Carta
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -41,6 +41,11 @@ export const NavBar = ()=>{
               <li className="nav-item">
                 <NavLink className="nav-link" to="/reservas">
                   Reservas
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/blog">
+                  Blog
                 </NavLink>
               </li>
               {/* <li className="nav-item dropdown">
