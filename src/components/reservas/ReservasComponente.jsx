@@ -1,15 +1,47 @@
-import React from "react";
+import {useState} from 'react';
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 export const ReservasComponente = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [email, setEmail] = useState("");
   const [fono, setFono] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
-
-  const onSubmit = (event) => {
+  //referencia collection firebase
+  const userCollectionRef = collection(db, 'reservas');
+   const MySwal = withReactContent(Swal);
+  //evento submit boton
+  const onSubmit = async (event) => {
     event.preventDefault();
+    const result = await addDoc(userCollectionRef,{
+        name,
+        email,
+        fono,
+        date,
+        guests
+    }    //{name: name, lastName: lastName, email: email, age: age}    
+    )
+    console.log("id_reserva::" +  result.id);
+    if (result.id != "") {
+        MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
+        ClearInput();
+    } else {
+        MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
+    }
+
+    function ClearInput() {
+        console.log("Clearinput()");
+        setName('');
+        setEmail('');
+        setFono('');
+        setDate('');
+        setTime('');
+        setGuests('');
+    }
   };
 
   return (
@@ -92,9 +124,11 @@ export const ReservasComponente = () => {
                     onChange={(e) => setGuests(e.target.value)}
                     required
                   />
-                  <button type="submit" className="btn btn-primary">
-                    Enviar Reserva
-                  </button>
+                  <div className="text-center">
+                    <button type="submit" className="btn btn-primary">
+                        Enviar Reserva
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>

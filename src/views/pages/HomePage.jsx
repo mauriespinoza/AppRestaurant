@@ -6,8 +6,10 @@ import { Jumbotron } from "../../components/jumbotron/Jumbotron";
 export const HomePage = () => {
   return (
     <>
-      <Jumbotron/>
-     
+      <Jumbotron id="jumbo1"/>
+      {/* <Jumbotron id="jumbo2"/>
+      <Jumbotron id="jumbo3"/>
+      <Jumbotron id="jumbo4"/> */}
     </>
   );
 };

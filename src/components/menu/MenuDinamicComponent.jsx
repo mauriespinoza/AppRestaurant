@@ -41,15 +41,17 @@ import './menuDinamicComponent.css';
         const files = await getDocs(q); 
         console.log("files::" + files.docs.map(doc => ({...doc.data(), id: doc.id})));
         console.log(files.docs.length);
-        files.docs.map((prod) => {
+        const newProducts = files.docs.map((prod) => {
             console.log("prod::" + prod.id)
-            console.log("prod::" + prod.
-            descripcionProducto)
-            setProductos(files.docs.map((doc) => doc.data()));
+            console.log("prod::" + prod.descripcionProducto)
+            return {id:prod.id,...prod.data()};
+            // setProductos(files.docs.map((doc) => doc.data()));
         });
-        productos.map((producto) => {
-            console.log("producto::" + producto.descripcionProducto)
-        })
+        // setProductos(files.docs.map((doc) => doc.data()));
+        setProductos(newProducts);
+        // productos.map((producto) => {
+        //     console.log("producto::" + producto.descripcionProducto)
+        // })
         }
     const getProductos = async (idFamilia) =>{
         // const dataProd = await db.collection("productos").doc( id ).get(); 

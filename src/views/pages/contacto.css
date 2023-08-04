@@ -1,0 +1,17 @@
+#container-main{
+    display: flex;
+}
+#card-form{
+    width: 500px;
+}
+#card-info{
+    width: 500px;
+}
+#container-main{
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+ #card-form{
+    padding-left: 10px;
+    padding-right: 10px;
+ }
