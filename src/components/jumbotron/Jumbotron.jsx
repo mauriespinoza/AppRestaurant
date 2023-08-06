@@ -1,46 +1,46 @@
+import { useState, useEffect } from "react"
 import { Carousel } from "react-bootstrap";
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../config/firebase'
 import './jumbotron.css'
  export const Jumbotron = () => {
+  const [ imagenes, setImagenes ] = useState([]);
+  const [index, setIndex] = useState(0);
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+    // const firestore = firebase.firestore();
+    const carruselCollectionRef = collection(db, 'carrusel');
+    const getImagenes = async () => {
+      const data = await getDocs(carruselCollectionRef);
+      console.log(data);
+      setImagenes(
+          data.docs.map(doc => ({...doc.data(), id: doc.id}))
+      );
+      
+  };
+  useEffect(() => {
+    getImagenes()
+  }, []);
   return (
     <>
-      {/* <Jumbotron fluid>
-      <Container>
-        <h1>Fluid jumbotron !</h1>
-        <p>
-           This is a modified fluid jumbotron which
-           stretches the whole horizontal space.    
-        </p>
-        <Button variant="primary">
-         Primary Button
-        </Button>
-      </Container>
-    </Jumbotron> */}
-    {/* <div id="jumbotron" style={{ display: 'block', width: "auto", padding: 0 }}> */}
-    <div id="jumbotron" style={{ display: 'block', width: "auto", height:"300px", padding: 0 }}>
-      {/* <h4>React-Bootstrap Carousel Component</h4> */}
-      <Carousel>
-        <Carousel.Item interval={1500}>
+    <div id="jumbotron">
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+      { imagenes.map((slide, i) => {
+        return (
+        <Carousel.Item key={i} className="carousel-item">
           <img
             className="d-block w-100"
-src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png"
-            alt="Image One"
+            src={slide.img}
+            alt={slide.nombre}
           />
           <Carousel.Caption>
-            <h3>Label for first slide</h3>
-            <p>Sample Text for Image One</p>
+            <h3>{slide.nombre}</h3>
+            <p>{slide.descripcion}</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={500}>
-          <img
-            className="d-block w-100"
-src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png"
-            alt="Image Two"
-          />
-          <Carousel.Caption>
-            <h3>Label for second slide</h3>
-            <p>Sample Text for Image Two</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        )
+      })}
       </Carousel>
     </div>
     </>
