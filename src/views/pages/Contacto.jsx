@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 import withReactContent from 'sweetalert2-react-content';
 // import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
