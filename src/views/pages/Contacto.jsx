@@ -49,7 +49,8 @@ export const Contacto = () => {
   };
   return (
     <>
-      <h1>Contacto</h1>
+      <div id="container">
+      <h1 className="text-center">Contacto</h1>
       <div className="row">
           <div id="card-contacto" className="col-sm-6">
             <div className="card">
@@ -112,9 +113,8 @@ export const Contacto = () => {
             <div className="card">
               <div className="card-body">
                 <h2 className="card-title">Horario de atención</h2>
-                  <p>Lunes a Miércoles: 12:30 – 23:00</p>
-                  <p>Jueves y Viernes: 12:30 – 00:00</p>
-                  <p>Sábado: 13:00 – 00:30</p>
+                  <p>Lunes a Jueves: 17:30 – 23:00</p>
+                  <p>Vienes y Sabado: 17:30 – 00:00</p>
                   <p>Domingo: Cerrado.
                   </p>
                   <p></p>
@@ -129,14 +129,16 @@ export const Contacto = () => {
                     aria-hidden="false"
                     tabIndex="0"
                   /> */}
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.4180883553586!2d-70.74900592513163!3d-33.7498605129069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96632168d3708649%3A0x45144356f6c034fa!2sVicar%C3%ADa%20de%20la%20Solidaridad%20583%2C%20Buin%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1691462340528!5m2!1ses!2scl" 
-
-                    id ="frame-maps"
-                    style={{ border: 0 }}
-                    allowfullscreen="" 
-                    loading="lazy">
-                  </iframe>
+                  <div className="row">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.4180883553586!2d-70.74900592513163!3d-33.7498605129069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96632168d3708649%3A0x45144356f6c034fa!2sVicar%C3%ADa%20de%20la%20Solidaridad%20583%2C%20Buin%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1691462340528!5m2!1ses!2scl" 
+                      className="responsive-iframe"
+                      id ="frame-maps"
+                      style={{ border: 0 }}
+                      allowfullscreen="" 
+                      loading="lazy">
+                    </iframe>
+                  </div>
                   {/* <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
                     <TileLayer
                       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -151,6 +153,7 @@ export const Contacto = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
     </>
   );

@@ -2,6 +2,12 @@
 // import React from 'react';
 // import {  FooterLink, Box, CDBBtn, CDBIcon } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
+import logo from '../../../public/logo-master-raul.jpg';
+import icoFacebook from '../../../public/facebook.png';
+import icoInstagram from '../../../public/instagram.png';
+import icoTwitter from '../../../public/twitter.png';
+import icoWhatsapp from '../../../public/icon-whatsapp.png';
+import './footer.css';
 export const Footer = () => {
   return (
     <>
@@ -9,20 +15,29 @@ export const Footer = () => {
       <Container>
         <Row className="justify-content-center">
           <Col md={4} className="text-center">
-            <h5>Columna 1</h5>
-            <p>Contenido de la columna 1</p>
+            <h2>Master Raul</h2>
+            <p>Vicaria de la Solidaridad 583, Buin</p>
+            <div id="container-icon-whatsapp">
+              <img id="icon-whatsapp" src={icoWhatsapp} alt="whatsapp" />
+              <p className="custom-span">+56 9 36538822</p>
+              
+            </div>
+            <p>masterraul@gmail.com</p>
           </Col>
           <Col md={4} className="text-center">
-            <h5>Navega</h5>
+            {/* <h5>Navega</h5>
             <p>Home</p>
             <p>Menu</p>
             <p>Contacto</p>
             <p>Reservas</p>
-            <p>Blog</p>
+            <p>Blog</p> */}
+            <img id="logo-footer" src={logo} alt="logo" />
           </Col>
-          <Col md={4} className="text-center">
-            <h5>Columna 3</h5>
-            <p>Contenido de la columna 3</p>
+          <Col md={4} id="footer-3" className="text-center">
+            <h2>Siguenos en Redes Sociales</h2>
+            <a href="#"><img src={icoFacebook}/></a>
+            <a href="#"><img src={icoInstagram}/></a>
+            <a href="#"><img src={icoTwitter}/></a>
           </Col>
         </Row>
       </Container>

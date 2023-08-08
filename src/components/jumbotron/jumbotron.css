@@ -1,11 +1,14 @@
 #jumbotron{
     /* display: flex;
   justify-content: center;*/
-  height: 200px;
+  /* height: 300px;
     width: 100%; 
-    color: blue;
+    color: blue; */
 }
 Carousel{
     /* height: 400px;
     width: auto; */
+}
+.carousel-item{
+  height: auto;
 }

@@ -24,13 +24,14 @@ import './jumbotron.css'
   }, []);
   return (
     <>
-    <div id="jumbotron">
+    <div id="jumbotron_">
       <Carousel activeIndex={index} onSelect={handleSelect}>
       { imagenes.map((slide, i) => {
         return (
         <Carousel.Item key={i} className="carousel-item">
           <img
-            className="d-block w-100"
+            // className="d-block w-100"
+            className="w-100 p-10"
             src={slide.img}
             alt={slide.nombre}
           />

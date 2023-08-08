@@ -3,7 +3,7 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-
+import './reservascomponente.css';
 export const ReservasComponente = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState("");
@@ -46,8 +46,8 @@ export const ReservasComponente = () => {
 
   return (
     <>
-      <div>
-        <h1>Reservas</h1>
+      <div id="container">
+        <h1 className="text-center">Reservas</h1>
         <div className="row">
           <div className="col-sm-6">
             <div className="card">
