@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import {MapContainer, TileLayer, Marker, Popup } from 'https://cdn.esm.sh/react-leaflet';
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
 import Swal from 'sweetalert2';
@@ -15,7 +14,7 @@ export const Contacto = () => {
   const [email, setEmail] = useState("");
   const [asunto, setAsunto] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const position = [51.505, -0.09];
+
   //referencia collection firebase
   const contactoCollectionRef = collection(db, 'contactos');
    const MySwal = withReactContent(Swal);
@@ -51,7 +50,7 @@ export const Contacto = () => {
     <>
       <h1>Contacto</h1>
       <div className="row">
-          <div className="col-sm-6">
+          <div id="card-contacto" className="col-sm-6">
             <div className="card">
               <div className="card-body">
                 <h2 className="card-title">Información de Contacto</h2>
@@ -108,7 +107,7 @@ export const Contacto = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-6">
+          <div id="card-mapa" className="col-sm-6">
             <div className="card">
               <div className="card-body">
                 <h2 className="card-title">Horario de atención</h2>
@@ -131,8 +130,8 @@ export const Contacto = () => {
                   /> */}
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.4180883553586!2d-70.74900592513163!3d-33.7498605129069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96632168d3708649%3A0x45144356f6c034fa!2sVicar%C3%ADa%20de%20la%20Solidaridad%20583%2C%20Buin%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1691462340528!5m2!1ses!2scl" 
-                    width="600" 
-                    height="450" 
+
+                    id ="frame-maps"
                     style={{ border: 0 }}
                     allowfullscreen="" 
                     loading="lazy">
