@@ -4,8 +4,9 @@ export const Blog = () => {
   return (
     <>
         <h1 className="text-center">
-            Blog
+            Blog 
         </h1>
+        <h2>Blog</h2>
     </>
   )
 }
