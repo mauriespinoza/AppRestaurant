@@ -5,6 +5,7 @@ import { HomePage } from '../views/pages/HomePage'
 import { Menu } from "../views/pages/Menu";
 import { Reservas } from "../views/pages/Reservas";
 import { Blog } from "../views/pages/Blog";
+import { Login } from "../views/pages/Login";
 export const MainRoutes = () => {
     return (
       <>
@@ -14,6 +15,7 @@ export const MainRoutes = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />}/>
           <Route path="*" element={<h1>Error 404 - Ruta no encontrada</h1>} />
         </Routes>
       </>

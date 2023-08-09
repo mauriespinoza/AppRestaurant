@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../../../public/logo-master-raul.jpg';
+import iconlogin from '../../../public/acceso.png';
 import './navbar.css'
 export const NavBar = ()=>{
    return (
@@ -84,15 +85,19 @@ export const NavBar = ()=>{
               </li>*/}
             </ul>
             <form className="d-flex" role="search">
-              <input
+              {/* <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
+              /> */}
+              {/* <button className="btn btn-outline-success" type="submit">
                 Buscar
-              </button>
+              </button> */}
+              <NavLink className="navbar-brand" to="/login">
+                {/* Restaurant */}
+                <img id="img-login" src={iconlogin} alt="login" />
+              </NavLink>
             </form>
           </div>
         </div>
