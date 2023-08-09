@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+// import Swal from 'sweetalert2';
+// import withReactContent from 'sweetalert2-react-content';
+import Alert from 'react-bootstrap/Alert';
 import './reservascomponente.css';
 export const ReservasComponente = () => {
   const [name, setName] = useState('');
@@ -13,7 +14,9 @@ export const ReservasComponente = () => {
   const [guests, setGuests] = useState("");
   //referencia collection firebase
   const userCollectionRef = collection(db, 'reservas');
-   const MySwal = withReactContent(Swal);
+  //  const MySwal = withReactContent(Swal);
+   //hooks para mostrar alert
+   const [isValid, setIsValid] = useState(false);
   //evento submit boton
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -27,10 +30,12 @@ export const ReservasComponente = () => {
     )
     console.log("id_reserva::" +  result.id);
     if (result.id != "") {
-        MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
+        // MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
+        setIsValid(true);
         ClearInput();
     } else {
-        MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
+        // MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
+        setIsValid(false);
     }
 
     function ClearInput() {
@@ -46,6 +51,10 @@ export const ReservasComponente = () => {
 
   return (
     <>
+    {
+      isValid ? <Alert variant="success">Reserva agendada satisfactoriamente</Alert>
+      : <Alert variant="danger">!Hemos tenido un problema para reservar, intentelo más tarde!</Alert>
+    }
       <div id="container">
         <h1 className="text-center">Reservas</h1>
         <div className="row">

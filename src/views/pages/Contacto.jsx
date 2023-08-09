@@ -2,8 +2,8 @@ import {useState} from 'react';
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
 // import Swal from 'sweetalert2';
-import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
-import withReactContent from 'sweetalert2-react-content';
+// import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
+// import withReactContent from 'sweetalert2-react-content';
 // import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import Card from "react-bootstrap/Card";
@@ -18,7 +18,7 @@ export const Contacto = () => {
 
   //referencia collection firebase
   const contactoCollectionRef = collection(db, 'contactos');
-   const MySwal = withReactContent(Swal);
+  //  const MySwal = withReactContent(Swal);
   //evento submit boton
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -33,10 +33,10 @@ export const Contacto = () => {
     )
     console.log("id_contacto::" +  result.id);
     if (result.id != "") {
-        MySwal.fire("Mensaje Enviado!", "Satisfactoriamente");
+        // MySwal.fire("Mensaje Enviado!", "Satisfactoriamente");
         ClearInput();
     } else {
-        MySwal.fire("Hemos tenido un problema al enviar tu mensaje","" , "error");
+        // MySwal.fire("Hemos tenido un problema al enviar tu mensaje","" , "error");
     }
 
     function ClearInput() {
