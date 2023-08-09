@@ -7,7 +7,7 @@ import icoFacebook from '../../../public/facebook.png';
 import icoInstagram from '../../../public/instagram.png';
 import icoTwitter from '../../../public/twitter.png';
 import icoWhatsapp from '../../../public/icon-whatsapp.png';
-import icoUbicacion from '../../../public/icon-Ubicacion.png';
+import icoUbicacion from '../../../public/icon-ubicacion.png';
 import icoMail from '../../../public/icon-email.png';
 import './footer.css';
 export const Footer = () => {
