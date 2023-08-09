@@ -17,6 +17,8 @@ export const ReservasComponente = () => {
   //  const MySwal = withReactContent(Swal);
    //hooks para mostrar alert
    const [isValid, setIsValid] = useState(false);
+   const [mensajeAlert, setMensajeAlert] = useState('');
+   const [variant, setVariant] = useState('');
   //evento submit boton
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -31,11 +33,15 @@ export const ReservasComponente = () => {
     console.log("id_reserva::" +  result.id);
     if (result.id != "") {
         // MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
+        setMensajeAlert("Reserva Agendada Satisfactoriamente!");
         setIsValid(true);
+        setVariant('success');
         ClearInput();
     } else {
         // MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
         setIsValid(false);
+        setVariant('danger');
+        setMensajeAlert("Hemos tenido un problema al Agendar tu reserva");
     }
 
     function ClearInput() {
@@ -51,10 +57,10 @@ export const ReservasComponente = () => {
 
   return (
     <>
-    {
+    {/* {
       isValid ? <Alert variant="success">Reserva agendada satisfactoriamente</Alert>
       : <Alert variant="danger">!Hemos tenido un problema para reservar, intentelo más tarde!</Alert>
-    }
+    } */}
       <div id="container">
         <h1 className="text-center">Reservas</h1>
         <div className="row">
@@ -138,6 +144,9 @@ export const ReservasComponente = () => {
                         Enviar Reserva
                     </button>
                   </div>
+                  <Alert key={variant} variant={variant}>
+                    {mensajeAlert}
+                   </Alert>
                 </form>
               </div>
             </div>

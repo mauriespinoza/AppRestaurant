@@ -1,5 +1,5 @@
 //import React from 'react'
-
+import {BlogComponent} from '../../components/blog/BlogComponent';
 export const Blog = () => {
   return (
     <>
@@ -7,6 +7,7 @@ export const Blog = () => {
         <h1 className="text-center">
             Blog 
         </h1>
+        <BlogComponent/>
       </div> 
     </>
   )
