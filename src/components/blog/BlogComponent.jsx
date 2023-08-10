@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import { Button } from "react-bootstrap";
+import './blogComponent.css';
 export const BlogComponent = () => {
     const [ articulos, setArticulos ] = useState([]);
     const blogCollectionRef = collection(db, 'blog');
@@ -29,7 +30,8 @@ export const BlogComponent = () => {
                 {articulos.map((blog, index) => (
                     <Col key={index}>
                     <Card>
-                        <Card.Img variant="bottom" src={blog.img} />
+                        {/* <Card.Img className='bg-image' key={index} variant="bottom" src={blog.img} /> */}
+                        <Card.Img className='img' variant="bottom" src={blog.img} />
                         <Card.Body>
                         <Card.Text className="card-text">
                             {blog.titulo}
