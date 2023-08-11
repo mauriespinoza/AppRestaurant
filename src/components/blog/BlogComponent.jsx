@@ -29,7 +29,7 @@ export const BlogComponent = () => {
             <Row xs={1} md={3} className="g-3">
                 {articulos.map((blog, index) => (
                     <Col key={index}>
-                    <Card>
+                    <Card className="container-card">
                         {/* <Card.Img className='bg-image' key={index} variant="bottom" src={blog.img} /> */}
                         <Card.Img className='img' variant="bottom" src={blog.img} />
                         <Card.Body>
