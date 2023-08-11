@@ -3,7 +3,7 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
 
 // import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
-// import withReactContent from 'sweetalert2-react-content';
+import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 // import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
@@ -19,7 +19,7 @@ export const Contacto = () => {
 
   //referencia collection firebase
   const contactoCollectionRef = collection(db, 'contactos');
-  //  const MySwal = withReactContent(Swal);
+  const MySwal = withReactContent(Swal);
   // const alertSwal = withReactContent(Swal.mixin({
   //   customClass: {
   //     confirmButton: 'btn alert-btn',
@@ -41,7 +41,7 @@ export const Contacto = () => {
     console.log("id_contacto::" +  result.id);
     if (result.id != "") {
         //Swal.fire("Mensaje Enviado!", "Satisfactoriamente");
-        Swal.fire({
+        MySwal.fire({
           icon: 'success',
           iconColor: '#32e1f1',
           color: '#64472E',
@@ -50,7 +50,7 @@ export const Contacto = () => {
         ClearInput();
     } else {
         //Swal.fire("Hemos tenido un problema al enviar tu mensaje","" , "error");
-        Swal.fire({
+        MySwal.fire({
           icon: 'danger',
           iconColor: '#32e1f1',
           color: '#64472E',
