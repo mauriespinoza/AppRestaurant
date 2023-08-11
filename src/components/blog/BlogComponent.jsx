@@ -4,7 +4,7 @@ import { db } from '../../config/firebase';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import './blogComponent.css';
 export const BlogComponent = () => {
     const [ articulos, setArticulos ] = useState([]);
@@ -31,18 +31,17 @@ export const BlogComponent = () => {
                     <Col key={index}>
                     <Card className="container-card">
                         {/* <Card.Img className='bg-image' key={index} variant="bottom" src={blog.img} /> */}
-                        <Card.Img className='img' variant="bottom" src={blog.img} />
+                        <div className="container-img">
+                            <Card.Img  src={blog.img} />
+                        </div>
                         <Card.Body>
-                        <Card.Text className="card-text">
-                            {blog.titulo}
+                        <Card.Text className="card-title">
+                        <strong>{blog.titulo}</strong>
                         </Card.Text>
                         <Card.Text className="card-text">
                             {blog.descripcion}
                         </Card.Text>
-                        {/* <Card.Button>
-                            {producto.precioProducto}
-                        </Card.Button> */}
-                        <Button variant="danger">Link</Button>
+                        {/* <Button variant="danger">Link</Button> */}
                         </Card.Body>
                     </Card>
                     </Col>

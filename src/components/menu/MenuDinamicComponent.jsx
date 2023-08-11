@@ -133,11 +133,15 @@ import './menuDinamicComponent.css';
             <Row xs={1} md={4} className="g-4">
                 {productos.map((producto, index) => (
                     <Col key={index}>
-                    <Card>
-                        <Card.Img variant="bottom" src={producto.img} />
+                    <Card className="container-img">
+                        <div className="container-img">
+                            {/* <Card.Img variant="bottom" src={producto.img} /> */}
+                            {/* <Card.Img  src={producto.img} /> */}
+                        </div>
+                        <Card.Img  src={producto.img} />
                         <Card.Body>
                         <Card.Text className="card-text">
-                            {producto.nombreProducto}
+                            <strong>{producto.nombreProducto}</strong>
                         </Card.Text>
                         {/* <Card.Button>
                             {producto.precioProducto}

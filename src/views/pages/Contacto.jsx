@@ -54,7 +54,7 @@ export const Contacto = () => {
           icon: 'danger',
           iconColor: '#32e1f1',
           color: '#64472E',
-          titleText: 'Hemo tenido un problema al enviar tu mensaje.',
+          titleText: 'Hemos tenido un problema al enviar tu mensaje.',
         });
     }
 
@@ -69,7 +69,7 @@ export const Contacto = () => {
   return (
     <>
       <div id="container">
-      <h1 className="text-center">Contacto</h1>
+      <h1 className="text-center">Contáctanos</h1>
       <div className="row">
           <div id="card-contacto" className="col-sm-6">
             <div className="card">

@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase';
-// import Swal from 'sweetalert2';
-// import withReactContent from 'sweetalert2-react-content';
-import Alert from 'react-bootstrap/Alert';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+// import Alert from 'react-bootstrap/Alert';
 import './reservascomponente.css';
 export const ReservasComponente = () => {
   const [name, setName] = useState('');
@@ -14,11 +14,11 @@ export const ReservasComponente = () => {
   const [guests, setGuests] = useState("");
   //referencia collection firebase
   const userCollectionRef = collection(db, 'reservas');
-  //  const MySwal = withReactContent(Swal);
+  const MySwal = withReactContent(Swal);
    //hooks para mostrar alert
-   const [isValid, setIsValid] = useState(false);
-   const [mensajeAlert, setMensajeAlert] = useState('');
-   const [variant, setVariant] = useState('');
+  //  const [isValid, setIsValid] = useState(false);
+  //  const [mensajeAlert, setMensajeAlert] = useState('');
+  //  const [variant, setVariant] = useState('');
   //evento submit boton
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -32,16 +32,16 @@ export const ReservasComponente = () => {
     )
     console.log("id_reserva::" +  result.id);
     if (result.id != "") {
-        // MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
-        setMensajeAlert("Reserva Agendada Satisfactoriamente!");
-        setIsValid(true);
-        setVariant('success');
+         MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
+        // setMensajeAlert("Reserva Agendada Satisfactoriamente!");
+        // setIsValid(true);
+        // setVariant('success');
         ClearInput();
     } else {
-        // MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
-        setIsValid(false);
-        setVariant('danger');
-        setMensajeAlert("Hemos tenido un problema al Agendar tu reserva");
+         MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
+        // setIsValid(false);
+        // setVariant('danger');
+        // setMensajeAlert("Hemos tenido un problema al Agendar tu reserva");
     }
 
     function ClearInput() {
@@ -144,9 +144,9 @@ export const ReservasComponente = () => {
                         Enviar Reserva
                     </button>
                   </div>
-                  <Alert key={variant} variant={variant}>
+                  {/* <Alert key={variant} variant={variant}>
                     {mensajeAlert}
-                   </Alert>
+                   </Alert> */}
                 </form>
               </div>
             </div>

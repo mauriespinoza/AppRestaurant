@@ -5,7 +5,7 @@ export const Blog = () => {
     <>
       <div id="container">
         <h1 className="text-center">
-            Blog 
+            Blog Artículos de Comida
         </h1>
         <BlogComponent/>
       </div> 

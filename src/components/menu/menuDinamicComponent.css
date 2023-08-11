@@ -15,6 +15,7 @@
      display: flex; 
     margin:auto;
     position: center;
+    object-fit: cover;
 }
 .card-title{
     text-align: center;
@@ -28,7 +29,28 @@
      display: flex; 
     margin:auto;
     position: center;
-    object-fit: cover;
+    /* object-fit: cover; */
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.container-img img{
+    /* display: block;
+    margin: auto;
+    height: auto;
+    max-height: 250px;
+    width: auto;
+    max-width: 250px;
+    border-radius: 20px;
+    object-fit: cover; */
+    /* border-radius: 5px;*/
+   height: 180px;
+    width: 80%;
+    object-fit: cover; 
 }
 CardGroup{
     padding: 5px;
@@ -42,4 +64,5 @@ Card{
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 10px;
 }
