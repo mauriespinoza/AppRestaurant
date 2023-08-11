@@ -4,7 +4,7 @@ import { db } from '../../config/firebase';
 
 // import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 // import withReactContent from 'sweetalert2-react-content';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 // import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import Card from "react-bootstrap/Card";
@@ -40,22 +40,22 @@ export const Contacto = () => {
     )
     console.log("id_contacto::" +  result.id);
     if (result.id != "") {
-        //alertSwal.fire("Mensaje Enviado!", "Satisfactoriamente");
-        // alertSwal.fire({
-        //   icon: 'success',
-        //   iconColor: '#32e1f1',
-        //   color: '#64472E',
-        //   titleText: 'Mensaje ha sido enviado satisfactoriamente.',
-        // });
+        //Swal.fire("Mensaje Enviado!", "Satisfactoriamente");
+        Swal.fire({
+          icon: 'success',
+          iconColor: '#32e1f1',
+          color: '#64472E',
+          titleText: 'Mensaje ha sido enviado satisfactoriamente.',
+        });
         ClearInput();
     } else {
-        //alertSwal.fire("Hemos tenido un problema al enviar tu mensaje","" , "error");
-        // alertSwal.fire({
-        //   icon: 'danger',
-        //   iconColor: '#32e1f1',
-        //   color: '#64472E',
-        //   titleText: 'Hemo tenido un problema al enviar tu mensaje.',
-        // });
+        //Swal.fire("Hemos tenido un problema al enviar tu mensaje","" , "error");
+        Swal.fire({
+          icon: 'danger',
+          iconColor: '#32e1f1',
+          color: '#64472E',
+          titleText: 'Hemo tenido un problema al enviar tu mensaje.',
+        });
     }
 
     function ClearInput() {
