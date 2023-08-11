@@ -4,7 +4,7 @@ export const About = () => {
   <></>;
   return (
     <div id="container-about">
-      <h2 className="text-left">Master Raúl</h2>
+      <h2 className="text-center">Master Raúl</h2>
       <div id="container-text">
         <div className="row">
           <p className="fs-3">
