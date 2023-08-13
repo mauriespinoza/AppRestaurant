@@ -11,7 +11,7 @@ import './footer.css';
 export const Footer = () => {
   return (
     <>
-      <footer id="footer" className="bg py-3">
+      <footer id="footer" className="mx-auto py-3">
       <Container>
         <Row className="justify-content-center">
           <Col md={4} className="text-center">

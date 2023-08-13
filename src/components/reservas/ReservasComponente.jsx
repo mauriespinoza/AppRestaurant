@@ -3,7 +3,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
+import logo from '../../../public/logo-master-raul.jpg';
 // import Alert from 'react-bootstrap/Alert';
 import "./reservascomponente.css";
 export const ReservasComponente = () => {
@@ -66,8 +66,12 @@ export const ReservasComponente = () => {
                   brevedad para revisar fechas y disponibilidad de horarios.
                 </p>
                 <p className="card-text">
-                  Ven a conocernos los mejores platos de la Gastronomia Chilena
+                  Ven a conocernos para deleitarte con la nueva alternativa culinaria de un Food Trucks 
                 </p>
+                <div className="logo">
+                  <img src={logo} alt={logo} />
+                </div>
+                
               </div>
             </div>
           </div>
