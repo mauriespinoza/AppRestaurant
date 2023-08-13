@@ -28,9 +28,10 @@ Estas instrucciones te ayudarán a obtener una copia del proyecto y a ejecutarlo
 
 ### Pre-requisitos 📋
 
-No se requieren instalaciones adicionales para ejecutar este proyecto, solo necesitarás un navegador web actualizado y crear una cuenta en Meteosource. Para obtener un APIKey. Este debe ser reemplazado en el ejemplo.
+crear una cuenta en Firebase. Para obtener un APIKey y ser reemplazada en la configuracion de la Base Datos
 
-https://www.meteosource.com/
+* [Node.js](https://nodejs.org/) 
+
 
 ### Instalación 🔧
 
@@ -39,16 +40,31 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 1. Clona este repositorio en tu máquina local.
 
 ```bash
-git clone git@github.com:mauriespinoza/AppPrevisionTiempoAPI.git
+git clone git@github.com:mauriespinoza/AppRestaurant.git
 ```
 
-1. Navega hasta el directorio del proyecto.
+2. Navega hasta el directorio del proyecto.
 
 ```bash
 cd nombre-repo
 ```
 
-1. Abre el archivo `index.html` en tu navegador web.
+3. Instala las dependencias
+
+```bash
+npm install
+```
+4. Correr la aplicación, el puerto por default es: http://localhost:5173
+
+```bash
+npm run dev
+```
+
+4. Compilar la aplicación
+
+```bash
+npm run build
+```
 
 ## Ejecutando las pruebas ⚙️
 
@@ -67,10 +83,15 @@ Puedes implementar este proyecto en un servidor web o utilizarlo localmente sin 
 Herramientas utilizadas para crear el proyecto:
 
 * HTML5 - Estructura del sitio web.
-* CSS - Estilos y diseño visual customizado y Bootstrap.
-* JavaScript - Lógica y funcionalidad de la Aplicacion.
-* Fetch-API - Consumo de API y manipulacion de la data.
-* ChartJS - Libreria para graficos en javascript.
+* CSS - Estilos y diseño visual customizado Bootstrap.
+* JavaScript (ECMAScript 6)- Lógica y funcionalidad de la Aplicacion.
+* Firebase - Database.
+* React - Libreria para contruccion de interfaces.
+* React Router 
+* React Bootstrap 
+* Bootstrap - Estilos y diseño visual customizado Bootstrap.
+* SweetAlert - Alert
+
 
 ## Contribuir 🖇️
 
