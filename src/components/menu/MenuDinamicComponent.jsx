@@ -90,9 +90,11 @@ export const MenuDinamicComponent = () => {
                   <Card.Text className="card-text">
                     <strong>{producto.nombreProducto}</strong>
                   </Card.Text>
-                  <Button variant="danger">
-                    {"$" + FormatCLP(producto.precioProducto)}
-                  </Button>
+                  <div className="text-center">
+                    <Button variant="danger">
+                      {"$" + FormatCLP(producto.precioProducto)}
+                    </Button>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>

@@ -1,8 +1,12 @@
 #footer{
     display: flex;
     justify-content: center;
-    padding: 5px;
     background-color: rgb(238, 224, 30);
+    /* padding: 5px; */
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    height: auto;
 }
 #logo-footer{
     width: 150px;
@@ -46,3 +50,14 @@
   #titulo-footer{
     display: flex;
   }
+  /* @media (max-height: 767px){
+    #footer{
+      display: flex;
+      justify-content: center;
+      background-color: rgb(238, 224, 30);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+
+  }
+  } */
