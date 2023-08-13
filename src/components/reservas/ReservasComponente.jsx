@@ -1,66 +1,59 @@
-import {useState} from 'react';
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../../config/firebase';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 // import Alert from 'react-bootstrap/Alert';
-import './reservascomponente.css';
+import "./reservascomponente.css";
 export const ReservasComponente = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [fono, setFono] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
   //referencia collection firebase
-  const userCollectionRef = collection(db, 'reservas');
+  const userCollectionRef = collection(db, "reservas");
+  //referencia para mostrar alert
   const MySwal = withReactContent(Swal);
-   //hooks para mostrar alert
-  //  const [isValid, setIsValid] = useState(false);
-  //  const [mensajeAlert, setMensajeAlert] = useState('');
-  //  const [variant, setVariant] = useState('');
-  //evento submit boton
+
+  //evento submit form
   const onSubmit = async (event) => {
     event.preventDefault();
-    const result = await addDoc(userCollectionRef,{
-        name,
-        email,
-        fono,
-        date,
-        guests
-    }    //{name: name, lastName: lastName, email: email, age: age}    
-    )
-    console.log("id_reserva::" +  result.id);
+    const result = await addDoc(userCollectionRef, {
+      name,
+      email,
+      fono,
+      date,
+      time,
+      guests,
+    });
     if (result.id != "") {
-         MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
-        // setMensajeAlert("Reserva Agendada Satisfactoriamente!");
-        // setIsValid(true);
-        // setVariant('success');
-        ClearInput();
+      MySwal.fire("Reserva Agendada!", "Satisfactoriamente");
+      ClearInput();
     } else {
-         MySwal.fire("Hemos tenido un problema al Agendar tu reserva","" , "error");
-        // setIsValid(false);
-        // setVariant('danger');
-        // setMensajeAlert("Hemos tenido un problema al Agendar tu reserva");
+      MySwal.fire(
+        "Hemos tenido un problema al Agendar tu reserva",
+        "",
+        "error"
+      );
     }
 
+    //funcion para limpiar input
     function ClearInput() {
-        console.log("Clearinput()");
-        setName('');
-        setEmail('');
-        setFono('');
-        setDate('');
-        setTime('');
-        setGuests('');
+      console.log("Clearinput()");
+      setName("");
+      setEmail("");
+      setFono("");
+      setDate("");
+      setTime("");
+      setGuests("");
     }
   };
 
   return (
     <>
-    {/* {
-      isValid ? <Alert variant="success">Reserva agendada satisfactoriamente</Alert>
-      : <Alert variant="danger">!Hemos tenido un problema para reservar, intentelo más tarde!</Alert>
-    } */}
       <div id="container">
         <h1 className="text-center">Reservas</h1>
         <div className="row">
@@ -124,15 +117,18 @@ export const ReservasComponente = () => {
                   <input
                     type="time"
                     id="time"
+                    min="18:00"
+                    max="23:00"
                     className="form-control mb-2"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
                     required
                   />
-
                   <label htmlFor="guests">Cantidad de invitados:</label>
                   <input
                     type="number"
+                    min="2"
+                    max="10"
                     id="guests"
                     className="form-control mb-2"
                     value={guests}
@@ -141,12 +137,9 @@ export const ReservasComponente = () => {
                   />
                   <div className="text-center">
                     <button type="submit" className="btn btn-primary">
-                        Enviar Reserva
+                      Enviar Reserva
                     </button>
                   </div>
-                  {/* <Alert key={variant} variant={variant}>
-                    {mensajeAlert}
-                   </Alert> */}
                 </form>
               </div>
             </div>
@@ -155,4 +148,4 @@ export const ReservasComponente = () => {
       </div>
     </>
   );
-}
+};

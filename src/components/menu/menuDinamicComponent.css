@@ -5,8 +5,6 @@
  .card-img-top{
      height: 50px;
      width: 50px;
-     /* display: flex; 
-     margin:auto;*/
      position: center;
  }
  .card-img{
@@ -19,9 +17,6 @@
 }
 .card-title{
     text-align: center;
-}
-.btn btn-primary{
-    
 }
 #prod-card-img{
     height: 150px;
@@ -39,15 +34,6 @@
     margin-top: 10px;
 }
 .container-img img{
-    /* display: block;
-    margin: auto;
-    height: auto;
-    max-height: 250px;
-    width: auto;
-    max-width: 250px;
-    border-radius: 20px;
-    object-fit: cover; */
-    /* border-radius: 5px;*/
    height: 180px;
     width: 80%;
     object-fit: cover; 
