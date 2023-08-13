@@ -1,10 +1,12 @@
 // import React from 'react'
+import { Header } from "../header/Header";
 import "./about.css";
 export const About = () => {
   <></>;
   return (
     <div id="container-about">
-      <h2 className="text-center">Master Raúl</h2>
+      {/* <h2 className="text-center">Master Raúl</h2> */}
+      <Header title='Master Raúl'/>
       <div id="container-text">
         <div className="row">
           <p className="fs-3">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
-
+import { Header } from "../../components/header/Header";
 // import Swal from 'sweetalert2/dist/sweetalert2.all.min.js';
 // import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
@@ -47,7 +47,8 @@ export const Contacto = () => {
   return (
     <>
       <div id="container">
-        <h1 className="text-center">Contáctanos</h1>
+        {/* <h1 className="text-center">Contáctanos</h1> */}
+        <Header title='Contáctanos'/>
         <div className="row">
           <div id="card-contacto" className="col-sm-6">
             <div className="card">

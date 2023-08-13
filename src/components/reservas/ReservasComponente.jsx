@@ -4,6 +4,7 @@ import { db } from "../../config/firebase";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import logo from '../../../public/logo-master-raul.jpg';
+import { Header } from "../header/Header";
 // import Alert from 'react-bootstrap/Alert';
 import "./reservascomponente.css";
 export const ReservasComponente = () => {
@@ -55,7 +56,8 @@ export const ReservasComponente = () => {
   return (
     <>
       <div id="container">
-        <h1 className="text-center">Reservas</h1>
+        {/* <h1 className="text-center">Reservas</h1> */}
+        <Header title='Reservas'/>
         <div className="row">
           <div className="col-sm-6">
             <div className="card">

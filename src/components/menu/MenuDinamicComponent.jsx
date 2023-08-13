@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Button } from "react-bootstrap";
-
+import { SubHeader } from "../header/SubHeader";
 import "./menuDinamicComponent.css";
 
 export const MenuDinamicComponent = () => {
@@ -59,7 +59,8 @@ export const MenuDinamicComponent = () => {
 
   return (
     <>
-    <div><h3 className="text-center"> Seleccione una de las Categorias de Productos</h3></div>
+    {/* <div><h3 className="text-center"> Seleccione una de las Categorias de Productos</h3></div> */}
+    <SubHeader title='Seleccione una de las Categorias de Productos'/>
       <div className="card-group">
         {familiasprod.map((familia, index) => (
           <div className="card" key={index}>
